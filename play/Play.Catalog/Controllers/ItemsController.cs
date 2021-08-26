@@ -17,6 +17,12 @@ namespace Play.Catalog.Controllers
             _service = service;
         }
 
+        [HttpGet("api/{name}")]
+        public string Get(string name)
+        {
+            return name;
+        }
+
         [HttpGet]
         public async Task<IEnumerable<ItemDto>> Get()
         {

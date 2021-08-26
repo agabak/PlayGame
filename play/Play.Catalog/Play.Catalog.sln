@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Play.Common", "..\Play.Comm
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Play.Inventory", "..\Play.Inventory\Play.Inventory.csproj", "{840EB2EB-7D3A-446C-9D73-3A4DA99C4CA3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Play.Identity", "..\Play.Identity\Play.Identity.csproj", "{98C0562D-650D-4083-9CC1-9263A81AAF02}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{840EB2EB-7D3A-446C-9D73-3A4DA99C4CA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{840EB2EB-7D3A-446C-9D73-3A4DA99C4CA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{840EB2EB-7D3A-446C-9D73-3A4DA99C4CA3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{98C0562D-650D-4083-9CC1-9263A81AAF02}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98C0562D-650D-4083-9CC1-9263A81AAF02}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98C0562D-650D-4083-9CC1-9263A81AAF02}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98C0562D-650D-4083-9CC1-9263A81AAF02}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

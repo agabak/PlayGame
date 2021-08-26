@@ -17,9 +17,16 @@ namespace Play.Inventory.Controllers
             _service = service;    
         }
 
+        [HttpGet("api/{name}")]
+        public string Get(string name)
+        {
+            return name;
+        }
+
         [HttpGet("{userId}")]
         public async Task<ActionResult<IEnumerable<InventoryItemDto>>> GetAsync(Guid userId)
         {
+            
             if (userId == Guid.Empty) return BadRequest();
 
             return Ok(await _service.GetAllItemsAsync(userId));
