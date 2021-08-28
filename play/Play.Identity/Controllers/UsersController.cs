@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Play.Identity.Dtos;
 using Play.Identity.Entities;
@@ -6,9 +7,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using static IdentityServer4.IdentityServerConstants;
 
 namespace Play.Identity.Controllers
 {
+    [Authorize(Policy = LocalApi.PolicyName)]
     [Route("[controller]")]
     [ApiController]
     public class UsersController : ControllerBase
