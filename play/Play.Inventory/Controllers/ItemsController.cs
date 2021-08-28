@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Play.Inventory.Services;
 using System;
 using System.Collections.Generic;
@@ -6,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace Play.Inventory.Controllers
 {
+    [Authorize]
     [Route("[controller]")]
     [ApiController]
     public class ItemsController : ControllerBase

@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Play.Catalog.Services;
 using System;
 using System.Collections.Generic;
@@ -6,8 +7,10 @@ using System.Threading.Tasks;
 
 namespace Play.Catalog.Controllers
 {
+   
     [Route("[controller]")]
     [ApiController]
+    [Authorize]
     public class ItemsController : ControllerBase
     {
         private readonly ICatalogItemService _service;

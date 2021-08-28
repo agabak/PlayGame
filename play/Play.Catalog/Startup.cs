@@ -6,6 +6,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using Play.Catalog.Entities;
 using Play.Catalog.Services;
+using Play.Common.Identity;
 using Play.Common.MassTransit;
 using Play.Common.MongoDB;
 using Play.Common.Settings;
@@ -24,11 +25,12 @@ namespace Play.Catalog
 
         public void ConfigureServices(IServiceCollection services)
         {
-           var serviceName = _config.GetSection(nameof(ServiceSettings))
+           var serviceSettinngs = _config.GetSection(nameof(ServiceSettings))
                                     .Get<ServiceSettings>();
 
-            services.AddMongo().AddMongoRepository<Item>("Items")
-                               .AddMassTransitAndRabbitMQ();
+             services.AddMongo().AddMongoRepository<Item>("Items")
+                                .AddMassTransitWithRabbitMQ()
+                                .AddJewtBearAuthentication();
 
             services.AddControllers(opts =>
             {
@@ -61,6 +63,7 @@ namespace Play.Catalog
 
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
@@ -70,3 +73,6 @@ namespace Play.Catalog
         }
     }
 }
+
+
+// dotnet pack -p:PackageVersion=1.0.1 -o ..\packages\  make sure to point where you're package folder at
