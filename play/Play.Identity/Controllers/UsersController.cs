@@ -66,3 +66,5 @@ namespace Play.Identity.Controllers
         }
     }
 }
+
+// role-base authorization 
